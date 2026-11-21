@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <title>Toko Terobosan Baru Condong Catur – Toko Bahan Bangunan Grosir & Eceran</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="toko bahan bangunan, grosir, eceran, Condongcatur, Sleman, Yogyakarta, Terobosan Baru" name="keywords">
+    <meta content="Toko Terobosan Baru Condong Catur – toko bahan bangunan grosir & eceran di Jl. Ring Road Utara, Condongcatur, Sleman. Buka setiap hari 07.00–21.00 WIB. Penerobos Batas dari Keterbatasan." name="description">
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- Favicon -->
+    <link href="img/favicon.png" rel="icon" type="image/png">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Gaya animasi header produk (dipakai ulang di index) -->
+    <link href="css/produk-header.css" rel="stylesheet">
+
+    <!-- Gaya tambahan index: hover konsisten, animasi, tombol WA, blok produk -->
+    <style>
+/* =====================================================================
+   site-fx.css – hover konsisten + animasi seragam (index & produk)
+   Muat SETELAH style.css dan produk-header.css
+   ===================================================================== */
+
+:root {
+    --ease: cubic-bezier(.2, .7, .2, 1);
+    --lift: -6px;
+    --shadow-hover: 0 16px 40px rgba(45, 106, 79, .22);
+}
+
+/* ---------- 1. SATU ATURAN HOVER UNTUK SEMUA KARTU ---------- */
+.feature-item, .org-card, .pcard-in, .gallery-item, .kat-box, .stat,
+.feature .row.g-4 .border-5 {
+    transition: transform .45s var(--ease), box-shadow .45s var(--ease),
+                background .3s, border-color .3s;
+}
+.feature-item { position: relative; background: #fff; }
+.feature-item:hover { z-index: 2; }
+.feature-item:hover, .org-card:hover, .pcard-in:hover, .gallery-item:hover,
+.kat-tile:hover .kat-box {
+    transform: translateY(var(--lift));
+    box-shadow: var(--shadow-hover);
+}
+.stat:hover { transform: translateY(-5px); }
+.feature .row.g-4 .border-5:hover { transform: translateY(-5px); background: rgba(143, 211, 176, .1); }
+
+/* ikon di dalam kartu: semuanya miring + membesar yang sama */
+.feature-icon, .org-avatar, .step-num { transition: transform .45s var(--ease); }
+.feature-item:hover .feature-icon { margin-left: 0; }
+.feature-item:hover .feature-icon,
+.org-card:hover .org-avatar,
+.step-item:hover .step-num {
+    transform: translateY(-4px) rotate(-8deg) scale(1.08);
+}
+
+/* gambar di dalam kartu: zoom halus yang sama */
+.kat-box img, .gallery-item img, .footer-thumb, .about-img img { transition: transform .6s var(--ease); }
+.kat-tile:hover .kat-box img, .gallery-item:hover img, .footer-thumb:hover { transform: scale(1.07); }
+.footer-thumb { cursor: pointer; }
+
+/* ---------- 2. TOMBOL: angkat + kilau lewat ---------- */
+.btn:not(.back-to-top) { position: relative; overflow: hidden; }
+.btn { transition: transform .3s var(--ease), box-shadow .3s, background .3s, color .3s, border-color .3s; }
+.btn:not(.btn-link):hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0, 0, 0, .22); }
+.btn-primary::after, .btn-light::after, .btn-outline-primary::after, .btn-outline-light::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -80%;
+    width: 50%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .38), transparent);
+    transform: skewX(-20deg);
+    transition: left .7s var(--ease);
+    pointer-events: none;
+}
+.btn-primary:hover::after, .btn-light:hover::after,
+.btn-outline-primary:hover::after, .btn-outline-light:hover::after { left: 140%; }
+
+/* tautan footer: geser, bukan melebar (tidak goyang) */
+.footer .btn.btn-link:hover { letter-spacing: normal; transform: translateX(6px); box-shadow: none; }
+
+/* ---------- 3. NAVBAR: garis bawah tumbuh ---------- */
+@media (min-width: 992px) {
+    .navbar .navbar-nav .nav-link { position: relative; }
+    .navbar .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0; bottom: 14px;
+        width: 100%; height: 3px;
+        background: var(--bs-primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .35s var(--ease);
+    }
+    .navbar .navbar-nav .nav-link:hover::after,
+    .navbar .navbar-nav .nav-link.active::after { transform: scaleX(1); }
+}
+
+/* ---------- 4. JUDUL SECTION: garis miring bergerak (sama seperti header produk) ---------- */
+.section-title::after {
+    height: 6px;
+    background: repeating-linear-gradient(-45deg, var(--bs-primary) 0 8px, #8fd3b0 8px 16px);
+    background-size: 22.63px 100%;
+    animation: fxStripe 1.8s linear infinite;
+}
+.feature .section-title::after, .contact .section-title::after {
+    background: repeating-linear-gradient(-45deg, #8fd3b0 0 8px, #17382a 8px 16px);
+    background-size: 22.63px 100%;
+}
+@keyframes fxStripe { to { background-position-x: 22.63px; } }
+
+/* ---------- 5. LATAR BERGERAK DI HERO, STATISTIK, KONTAK ---------- */
+.fx-host { position: relative; isolation: isolate; }
+.fx-host > .phero-bg { overflow: hidden; }
+.stats-band { background: linear-gradient(135deg, #17382a, #2d6a4f) !important; overflow: hidden; }
+.hero-fx { position: absolute; inset: 0; z-index: 2; overflow: hidden; pointer-events: none; }
+.hero-fx .phero-stripe { z-index: 1; }
+
+/* ---------- 6. TOMBOL WHATSAPP: pill hidup ---------- */
+.wa-float {
+    width: auto; height: 58px;
+    padding: 0 1.05rem;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    box-shadow: 0 10px 26px rgba(18, 140, 126, .45);
+    gap: 0;
+}
+.wa-float::before { border-radius: 50px; border-color: #25d366; }
+.wa-float:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(18, 140, 126, .55); }
+.wa-float i { animation: waWiggle 6s ease-in-out infinite; }
+.wa-label {
+    max-width: 0; overflow: hidden; white-space: nowrap;
+    font-size: .9rem; font-weight: 600; opacity: 0;
+    transition: max-width .5s var(--ease), margin .5s var(--ease), opacity .4s;
+}
+.wa-float:hover .wa-label, .wa-float.is-hint .wa-label { max-width: 180px; margin-left: .65rem; opacity: 1; }
+.wa-dot { display: none; position: absolute; top: 7px; right: 9px; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #128c7e; }
+.wa-float.is-open .wa-dot { display: block; background: #fff; }
+.wa-float.is-closed .wa-dot { display: block; background: #f0a39a; }
+@keyframes waWiggle {
+    0%, 82%, 100% { transform: none; }
+    85% { transform: rotate(-16deg) scale(1.1); }
+    89% { transform: rotate(14deg) scale(1.1); }
+    93% { transform: rotate(-8deg); }
+    97% { transform: rotate(5deg); }
+}
+
+/* ---------- 7. BLOK PRODUK DI INDEX (memakai gaya .phero) ---------- */
+.phero-section { padding: 5rem 0 8rem; }
+.phero-section p { text-align: center; text-align-last: center; hyphens: manual; }
+.phero-section .phero-sub { max-width: 560px; margin: 0 auto; color: rgba(255, 255, 255, .88); }
+.phero-section .psearch-box { margin-top: 1.8rem; }
+.phero-section .psearch-box input { padding-right: 7rem; }
+.phero-go {
+    position: absolute; right: .45rem; top: 50%; transform: translateY(-50%);
+    padding: .65rem 1.3rem; border: 0;
+    background: var(--bs-primary); color: #fff;
+    font-weight: 600; font-size: .85rem; text-transform: uppercase;
+    transition: background .3s;
+}
+.phero-go:hover { background: #17382a; }
+.phero .psuggest a {
+    display: inline-block; margin: .15rem; padding: .2rem .95rem;
+    border: 1px solid rgba(255, 255, 255, .6); border-radius: 50px;
+    color: #fff; font-size: .85rem; text-decoration: none;
+    transition: transform .25s ease, background .25s ease, color .25s ease;
+}
+.phero .psuggest a:hover { background: #fff; color: var(--bs-primary); transform: translateY(-3px); }
+.phero-section .kat-grid { max-width: 1000px; margin: 2.4rem auto 0; }
+.phero-section .kat-name { color: #fff; }
+.phero-section .kat-n { color: rgba(255, 255, 255, .7); }
+.phero-section .kat-tile.active .kat-name { text-decoration: none; }
+.phero-section .reveal.btn-wrap { margin-top: 2.4rem; }
+
+/* ---------- Hormati pengguna yang mematikan animasi ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .section-title::after, .wa-float i { animation: none !important; }
+    .btn::after { display: none; }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-primary text-white d-none d-lg-flex wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-3">
+            <div class="d-flex align-items-center">
+                <a href="#beranda" class="d-flex align-items-center text-white">
+                    <img class="brand-logo me-3" src="img/logo-terobosan-baru.jpg" alt="Logo Toko Terobosan Baru Condong Catur">
+                    <div class="lh-sm">
+                        <h4 class="text-white fw-bold text-uppercase m-0">Terobosan Baru</h4>
+                        <small class="d-block text-uppercase">Condong Catur</small>
+                        <small class="d-block fst-italic">Penerobos Batas dari Keterbatasan</small>
+                    </div>
+                </a>
+                <div class="ms-auto d-flex align-items-center">
+                    <span class="status-badge ms-4 d-none d-lg-inline-flex" data-open-status><span class="status-dot"></span><span class="status-text">Memeriksa jam buka…</span></span>
+                    <small class="ms-4 d-none d-xl-block"><i class="fa fa-map-marker-alt me-2"></i>Jl. Ring Road Utara No. 15, Condongcatur</small>
+                    <small class="ms-4 d-none d-xl-block"><i class="fa fa-clock me-2"></i>Setiap hari 07.00 – 21.00 WIB</small>
+                    <div class="ms-3 d-flex">
+                        <a class="btn btn-sm-square btn-light text-primary ms-2" href="https://wa.me/6282338881919"
+                            target="_blank" rel="noopener" aria-label="WhatsApp Toko Terobosan Baru"><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-sm-square btn-light text-primary ms-2" href="https://instagram.com/terobosanbarucondongcatur"
+                            target="_blank" rel="noopener" aria-label="Instagram @terobosanbarucondongcatur"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-white sticky-top wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
+                <a href="#beranda" class="navbar-brand d-lg-none d-flex align-items-center py-2">
+                    <img class="brand-logo brand-logo-sm me-2" src="img/logo-terobosan-baru.jpg" alt="Logo Toko Terobosan Baru Condong Catur">
+                    <span class="lh-sm">
+                        <span class="d-block fw-bold text-uppercase fs-6">Terobosan Baru</span>
+                        <small class="d-block text-secondary text-uppercase" style="font-size:.7rem">Condong Catur</small>
+                    </span>
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" aria-label="Buka menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="#beranda" class="nav-item nav-link active">Beranda</a>
+                        <a href="#tentang" class="nav-item nav-link">Tentang</a>
+                        <a href="#struktur" class="nav-item nav-link">Struktur</a>
+                        <a href="#keunggulan" class="nav-item nav-link">Keunggulan</a>
+                        <a href="produk.html" class="nav-item nav-link">Produk</a>
+                        <a href="#galeri" class="nav-item nav-link">Galeri</a>
+                        <a href="#kontak" class="nav-item nav-link">Kontak</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <div id="beranda" class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1">
+                    <img class="img-fluid" src="img/toko-siang.jpg" alt="">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="1" aria-label="Slide 2">
+                    <img class="img-fluid" src="img/toko-interior.jpg" alt="">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="2" aria-label="Slide 3">
+                    <img class="img-fluid" src="img/toko-malam.jpg" alt="">
+                </button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100 hero-img" style="object-position:54% 50%" src="img/toko-siang.jpg" alt="Tampak depan Toko Terobosan Baru Condong Catur pada siang hari">
+                    <div class="carousel-caption">
+                        <span class="text-uppercase text-primary fw-bold mb-3 hero-kicker">Toko Terobosan Baru · Condong Catur</span>
+                        <h1 class="hero-title text-uppercase text-white mb-3">Penerobos Batas <span>dari Keterbatasan</span></h1>
+                        <p class="text-white mb-4 hero-text">Nggak ada kata &ldquo;mentok&rdquo; kalau soal bahan bangunan. Grosir atau eceran, semua kami layani.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="https://wa.me/6282338881919" target="_blank" rel="noopener" class="btn btn-primary py-3 px-4"><i class="fab fa-whatsapp me-2"></i>Hubungi WhatsApp</a>
+                            <a href="produk.html" class="btn btn-outline-light py-3 px-4">Lihat Produk</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100 hero-img" style="object-position:50% 55%" src="img/toko-interior.jpg" alt="Suasana interior Toko Terobosan Baru Condong Catur">
+                    <div class="carousel-caption">
+                        <span class="text-uppercase text-primary fw-bold mb-3 hero-kicker">Layanan Toko</span>
+                        <h1 class="hero-title text-uppercase text-white mb-3">Grosir &amp; Eceran, Tunai &amp; QRIS</h1>
+                        <p class="text-white mb-4 hero-text">Pembeli mengambil barang langsung di toko &mdash; toko tidak menyediakan layanan pengantaran barang.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="https://wa.me/6282338881919" target="_blank" rel="noopener" class="btn btn-primary py-3 px-4"><i class="fab fa-whatsapp me-2"></i>Hubungi WhatsApp</a>
+                            <a href="#tentang" class="btn btn-outline-light py-3 px-4">Tentang Kami</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100 hero-img" style="object-position:50% 22%" src="img/toko-malam.jpg" alt="Tampak depan Toko Terobosan Baru Condong Catur pada malam hari">
+                    <div class="carousel-caption">
+                        <span class="text-uppercase text-primary fw-bold mb-3 hero-kicker">Buka Setiap Hari · 07.00 – 21.00 WIB</span>
+                        <h1 class="hero-title text-uppercase text-white mb-3">Kunjungi Kami di Ring Road Utara</h1>
+                        <p class="text-white mb-4 hero-text">Jl. Ring Road Utara No. 15, RW 2, Sanggrahan, Condongcatur, Kec. Depok, Kab. Sleman, DI Yogyakarta 55281.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#kontak" class="btn btn-primary py-3 px-4"><i class="fa fa-map-marker-alt me-2"></i>Lihat Lokasi</a>
+                            <a href="https://instagram.com/terobosanbarucondongcatur" target="_blank" rel="noopener" class="btn btn-outline-light py-3 px-4"><i class="fab fa-instagram me-2"></i>Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- Marquee Start -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-group"><span>Grosir &amp; Eceran</span><i class="fa fa-square"></i><span>Tunai &amp; QRIS</span><i class="fa fa-square"></i><span>Semen Gresik</span><i class="fa fa-square"></i><span>Semen Tiga Roda</span><i class="fa fa-square"></i><span>Besi Beton Polos</span><i class="fa fa-square"></i><span>Cat Avitex</span><i class="fa fa-square"></i><span>Pipa PVC Rucika</span><i class="fa fa-square"></i><span>Buka Setiap Hari</span><i class="fa fa-square"></i><span>Grosir &amp; Eceran</span><i class="fa fa-square"></i><span>Tunai &amp; QRIS</span><i class="fa fa-square"></i><span>Semen Gresik</span><i class="fa fa-square"></i><span>Semen Tiga Roda</span><i class="fa fa-square"></i><span>Besi Beton Polos</span><i class="fa fa-square"></i><span>Cat Avitex</span><i class="fa fa-square"></i><span>Pipa PVC Rucika</span><i class="fa fa-square"></i><span>Buka Setiap Hari</span><i class="fa fa-square"></i></div>
+            <div class="marquee-group"><span>Grosir &amp; Eceran</span><i class="fa fa-square"></i><span>Tunai &amp; QRIS</span><i class="fa fa-square"></i><span>Semen Gresik</span><i class="fa fa-square"></i><span>Semen Tiga Roda</span><i class="fa fa-square"></i><span>Besi Beton Polos</span><i class="fa fa-square"></i><span>Cat Avitex</span><i class="fa fa-square"></i><span>Pipa PVC Rucika</span><i class="fa fa-square"></i><span>Buka Setiap Hari</span><i class="fa fa-square"></i><span>Grosir &amp; Eceran</span><i class="fa fa-square"></i><span>Tunai &amp; QRIS</span><i class="fa fa-square"></i><span>Semen Gresik</span><i class="fa fa-square"></i><span>Semen Tiga Roda</span><i class="fa fa-square"></i><span>Besi Beton Polos</span><i class="fa fa-square"></i><span>Cat Avitex</span><i class="fa fa-square"></i><span>Pipa PVC Rucika</span><i class="fa fa-square"></i><span>Buka Setiap Hari</span><i class="fa fa-square"></i></div>
+        </div>
+    </div>
+    <!-- Marquee End -->
+
+
+    <!-- About Start -->
+    <div id="tentang" class="container-fluid pt-6 pb-6">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="about-img">
+                        <img class="img-fluid w-100" src="img/toko-interior.jpg" alt="Interior Toko Terobosan Baru Condong Catur dengan etalase dan beragam barang dagangan">
+                        <small class="text-secondary d-block mt-2">Suasana di dalam toko.</small>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="section-title display-6 text-uppercase mb-4">Mengenal Toko Terobosan Baru Condong Catur</h1>
+                    <p class="mb-4">Toko Terobosan Baru Condong Catur adalah toko bahan bangunan milik Bapak Anang yang
+                        berdiri pada April 2026. Toko ini merupakan cabang dari Toko Terobosan Baru yang berpusat di
+                        Palagan, dan melayani pembeli perorangan maupun pelaksana pembangunan, baik secara grosir maupun
+                        eceran.</p>
+                    <div class="row g-5 mb-4">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 btn-xl-square bg-light me-3">
+                                    <i class="fa fa-boxes fa-2x text-primary"></i>
+                                </div>
+                                <h5 class="lh-base text-uppercase mb-0">Grosir &amp; Eceran</h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 btn-xl-square bg-light me-3">
+                                    <i class="fa fa-qrcode fa-2x text-primary"></i>
+                                </div>
+                                <h5 class="lh-base text-uppercase mb-0">Tunai &amp; QRIS</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <p><i class="fa fa-check-square text-primary me-3"></i>Bidang usaha: penjualan bahan bangunan</p>
+                    <p><i class="fa fa-check-square text-primary me-3"></i>Melayani perorangan dan pelaksana pembangunan</p>
+                    <p><i class="fa fa-check-square text-primary me-3"></i>Cabang Condongcatur, pusat di Palagan</p>
+                    <div class="border border-5 border-primary p-4 text-center mt-4">
+                        <h4 class="lh-base text-uppercase mb-0">&ldquo;Penerobos Batas dari Keterbatasan&rdquo;</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Struktur Start -->
+    <div id="struktur" class="container-fluid org pt-6 pb-6">
+        <div class="container">
+            <div class="text-center section-head mx-auto" style="max-width: 640px;">
+                <h1 class="section-title display-6 text-uppercase mb-3">Struktur Organisasi</h1>
+                <p class="mb-5">Susunan tim yang mengelola Toko Terobosan Baru Condong Catur, mulai dari pemilik hingga staf yang melayani pembeli di toko.</p>
+            </div>
+            <ol class="org-chart">
+                <li class="org-node reveal">
+                    <div class="org-card">
+                        <div class="org-avatar"><i class="fa fa-user-tie"></i></div>
+                        <div>
+                            <span class="org-role">Pemilik</span>
+                            <h5 class="org-name text-uppercase">Bapak Anang</h5>
+                            <p class="org-desc">Pemilik usaha dan penanggung jawab utama Toko Terobosan Baru Condong Catur.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="org-node reveal">
+                    <div class="org-card">
+                        <div class="org-avatar"><i class="fa fa-shopping-cart"></i></div>
+                        <div>
+                            <span class="org-role">Purchasing</span>
+                            <h5 class="org-name text-uppercase">Parmin</h5>
+                            <p class="org-desc">Mengelola pengadaan dan pembelian stok barang dagangan toko.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="org-node reveal">
+                    <div class="org-card">
+                        <div class="org-avatar"><i class="fa fa-clipboard-list"></i></div>
+                        <div>
+                            <span class="org-role">Admin</span>
+                            <h5 class="org-name text-uppercase">Kistik</h5>
+                            <p class="org-desc">Mengurus administrasi, pencatatan, dan pembukuan toko.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="org-node reveal">
+                    <div class="org-card">
+                        <div class="org-avatar"><i class="fa fa-user"></i></div>
+                        <div>
+                            <span class="org-role">Staff</span>
+                            <h5 class="org-name text-uppercase">Dwi</h5>
+                            <p class="org-desc">Melayani pembeli dan membantu pengambilan barang langsung di toko.</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- Struktur End -->
+
+
+    <!-- Statistik Start -->
+    <div class="container-fluid stats-band bg-primary py-5">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-lg-3 stat reveal"><div class="stat-num"><span data-count="4">0</span></div><div class="stat-label">Anggota Tim</div></div>
+                <div class="col-6 col-lg-3 stat reveal"><div class="stat-num"><span data-count="6">0</span></div><div class="stat-label">Produk Utama</div></div>
+                <div class="col-6 col-lg-3 stat reveal"><div class="stat-num"><span data-count="7">0</span></div><div class="stat-label">Hari Buka / Minggu</div></div>
+                <div class="col-6 col-lg-3 stat reveal"><div class="stat-num"><span data-count="14">0</span></div><div class="stat-label">Jam Layanan / Hari</div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Statistik End -->
+
+
+    <!-- Layanan Start -->
+    <div id="layanan" class="container-fluid pt-4 pb-6">
+        <div class="container">
+            <div class="text-center section-head mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 640px;">
+                <h1 class="section-title display-6 text-uppercase mb-3">Layanan Toko</h1>
+                <p class="mb-5">Hal-hal yang perlu Anda ketahui sebelum berbelanja di Toko Terobosan Baru Condong Catur, mulai dari jenis pembelian, pengambilan barang, hingga cara pembayaran.</p>
+            </div>
+            <div class="row g-0 feature-row wow fadeIn" data-wow-delay="0.1s">
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="feature-item border h-100">
+                        <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
+                            <i class="fa fa-boxes fa-2x text-white"></i>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <h5 class="text-uppercase mb-3">Grosir &amp; Eceran</h5>
+                            <p class="mb-0">Melayani pembelian grosir maupun eceran.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="feature-item border h-100">
+                        <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
+                            <i class="fa fa-store fa-2x text-white"></i>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <h5 class="text-uppercase mb-3">Ambil di Toko</h5>
+                            <p class="mb-0">Tidak menyediakan layanan pengantaran barang. Pembeli mengambil langsung di toko.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="feature-item border h-100">
+                        <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
+                            <i class="fa fa-qrcode fa-2x text-white"></i>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <h5 class="text-uppercase mb-3">Tunai &amp; QRIS</h5>
+                            <p class="mb-0">Pembayaran dapat dilakukan secara tunai maupun QRIS.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="feature-item border h-100">
+                        <div class="feature-icon btn-xxl-square bg-primary mb-4 mt-n4">
+                            <i class="fa fa-clock fa-2x text-white"></i>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <h5 class="text-uppercase mb-3">Buka Setiap Hari</h5>
+                            <p class="mb-0">Pukul 07.00 – 21.00 WIB.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Layanan End -->
+
+
+    <!-- Why Choose Us Start -->
+    <div id="keunggulan" class="container-fluid feature mt-6 mb-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-0 justify-content-end">
+                <div class="col-lg-6 pt-5">
+                    <div class="mt-5">
+                        <h1 class="section-title display-6 text-white text-uppercase mb-4 wow fadeIn" data-wow-delay="0.3s">Mengapa Berbelanja di Terobosan Baru</h1>
+                        <p class="text-light mb-4 wow fadeIn" data-wow-delay="0.4s">Kebutuhan bahan bangunan Anda
+                            dilayani di satu toko, baik untuk pembelian satuan maupun dalam jumlah besar.</p>
+                        <div class="row g-4 pt-2 mb-4">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                                <div class="flex-column text-center border border-5 border-primary p-4">
+                                    <h3 class="text-white text-uppercase">Grosir &amp; Eceran</h3>
+                                    <p class="text-white text-uppercase mb-0">Sesuai kebutuhan</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="flex-column text-center border border-5 border-primary p-4">
+                                    <h3 class="text-white text-uppercase">Tunai &amp; QRIS</h3>
+                                    <p class="text-white text-uppercase mb-0">Pembayaran praktis</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border border-5 border-primary border-bottom-0 p-5">
+                            <div class="d-flex align-items-start mb-4 wow fadeIn" data-wow-delay="0.6s">
+                                <i class="fa fa-clock text-primary fs-4 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="text-white text-uppercase mb-1">Buka Setiap Hari</h6>
+                                    <span class="text-light">Pukul 07.00 – 21.00 WIB</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.7s">
+                                <i class="fa fa-map-marker-alt text-primary fs-4 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="text-white text-uppercase mb-1">Lokasi Strategis</h6>
+                                    <span class="text-light">Di Jl. Ring Road Utara, Condongcatur, Sleman</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Why Choose Us End -->
+
+
+    <!-- Produk Start -->
+<section id="produk" class="phero phero-section" data-parallax>
+    <div class="phero-bg" aria-hidden="true">
+        <div class="phero-grid"></div>
+        <span class="phero-blob phero-blob-1"></span>
+        <span class="phero-blob phero-blob-2"></span>
+        <span class="phero-ico" style="--d:26; left:5%; top:16%"><i class="fa fa-cubes" style="--s:4.4rem; --t:7s; --dl:0s"></i></span>
+        <span class="phero-ico" style="--d:18; left:12%; top:60%"><i class="fa fa-paint-roller" style="--s:3.2rem; --t:8s; --dl:-2s"></i></span>
+        <span class="phero-ico" style="--d:32; right:6%; top:14%"><i class="fa fa-bolt" style="--s:3.8rem; --t:6.5s; --dl:-1s"></i></span>
+        <span class="phero-ico" style="--d:22; right:11%; top:58%"><i class="fa fa-tools" style="--s:4.2rem; --t:9s; --dl:-3s"></i></span>
+    </div>
+    <div class="phero-stripe" aria-hidden="true"></div>
+
+    <div class="container">
+        <p class="phero-kicker reveal"><span class="phero-dot"></span>Katalog Produk &amp; Harga</p>
+        <h2 class="phero-title reveal">Cari <span class="phero-word" data-typing="semen,besi,cat,pipa,keramik,kayu,kabel,perkakas,pasir">semen</span><span class="phero-caret"></span><br>di Terobosan Baru</h2>
+        <p class="phero-sub reveal">Ketik nama barang untuk melihat harganya, lalu tanyakan stok langsung lewat WhatsApp.</p>
+
+        <form action="produk.html" method="get" class="psearch-box reveal">
+            <i class="fa fa-search"></i>
+            <input type="search" name="q" placeholder="Cari semen, besi, pipa 3 inci…" aria-label="Cari produk" autocomplete="off">
+            <button class="phero-go" type="submit">Cari</button>
+        </form>
+        <div class="psuggest reveal">
+            <span class="text-white me-1">Populer:</span>
+            <a href="produk.html?q=semen">semen</a>
+            <a href="produk.html?q=besi">besi</a>
+            <a href="produk.html?q=cat">cat</a>
+            <a href="produk.html?q=pipa">pipa</a>
+            <a href="produk.html?q=keramik">keramik</a>
+        </div>
+
+        <ul class="phero-stats reveal">
+            <li><strong data-count="28">0</strong><span>Produk</span></li>
+            <li><strong data-count="9">0</strong><span>Kategori</span></li>
+            <li><strong data-count="5">0</strong><span>Harga Grosir</span></li>
+        </ul>
+
+        <div class="kat-grid reveal">
+            <a class="kat-tile" href="produk.html?kat=Semen"><span class="kat-box" data-ikon="fa-cubes"><img src="img/produk-semen-gresik.jpg" alt="Semen" loading="lazy"></span><span class="kat-name">Semen</span><span class="kat-n">3 produk</span></a>
+            <a class="kat-tile" href="produk.html?kat=Besi"><span class="kat-box" data-ikon="fa-grip-lines"><img src="img/produk-besi-10mm.jpg" alt="Besi" loading="lazy"></span><span class="kat-name">Besi</span><span class="kat-n">5 produk</span></a>
+            <a class="kat-tile" href="produk.html?kat=Cat"><span class="kat-box" data-ikon="fa-paint-roller"><img src="img/produk-cat-avitex.jpg" alt="Cat" loading="lazy"></span><span class="kat-name">Cat</span><span class="kat-n">3 produk</span></a>
+            <a class="kat-tile" href="produk.html?kat=Pipa"><span class="kat-box" data-ikon="fa-tint"><img src="img/produk-pipa-pvc.jpg" alt="Pipa" loading="lazy"></span><span class="kat-name">Pipa</span><span class="kat-n">4 produk</span></a>
+            <a class="kat-tile" href="produk.html?kat=Material"><span class="kat-box" data-ikon="fa-boxes"><img src="img/bata-merah.jpe" alt="Material" loading="lazy"></span><span class="kat-name">Material</span><span class="kat-n">4 produk</span></a>
+            <a class="kat-tile" href="produk.html?kat=Kayu"><span class="kat-box" data-ikon="fa-layer-group"><img src="img/kayu-kaso.jpg" alt="Kayu" loading="lazy"></span><span class="kat-name">Kayu</span><span class="kat-n">2 produk</span></a>
+            <a class="kat-tile" href="produk.html?kat=Keramik"><span class="kat-box" data-ikon="fa-border-all"><img src="img/keramik-lantai-40x40.jpe" alt="Keramik" loading="lazy"></span><span class="kat-name">Keramik</span><span class="kat-n">1 produk</span></a>
+            <a class="kat-tile" href="produk.html?kat=Listrik"><span class="kat-box" data-ikon="fa-bolt"><img src="img/lampu-led.jpe" alt="Listrik" loading="lazy"></span><span class="kat-name">Listrik</span><span class="kat-n">3 produk</span></a>
+            <a class="kat-tile" href="produk.html?kat=Perkakas"><span class="kat-box" data-ikon="fa-tools"><img src="img/palu.jpe" alt="Perkakas" loading="lazy"></span><span class="kat-name">Perkakas</span><span class="kat-n">3 produk</span></a>
+        </div>
+
+        <div class="reveal btn-wrap">
+            <a href="produk.html" class="btn btn-light text-primary py-3 px-5">Lihat Semua Produk &amp; Harga</a>
+        </div>
+    </div>
+    <div class="phero-wave" aria-hidden="true"></div>
+</section>
+<!-- Produk End -->
+
+
+
+    <!-- Galeri Start -->
+    <div id="galeri" class="container-fluid gallery pt-6 pb-6">
+        <div class="container">
+            <div class="text-center section-head mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 640px;">
+                <h1 class="section-title display-6 text-uppercase mb-3">Galeri Toko</h1>
+                <p class="mb-5">Beberapa potret Toko Terobosan Baru Condong Catur dari dalam maupun luar. Klik gambar untuk melihatnya lebih besar.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <figure class="gallery-item m-0" data-lightbox tabindex="0" role="button">
+                        <img src="img/toko-interior.jpg" alt="Interior toko" style="object-position:50% 50%">
+                        <figcaption>Interior toko</figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <figure class="gallery-item m-0" data-lightbox tabindex="0" role="button">
+                        <img src="img/toko-malam.jpg" alt="Tampak depan toko pada malam hari" style="object-position:50% 20%">
+                        <figcaption>Tampak depan (malam)</figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+                    <figure class="gallery-item m-0" data-lightbox tabindex="0" role="button">
+                        <img src="img/toko-siang.jpg" alt="Tampak depan toko pada siang hari dari seberang jalan" style="object-position:54% 50%">
+                        <figcaption>Tampak depan (siang)</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Galeri End -->
+
+
+    <!-- Cara Belanja Start -->
+    <div id="cara-belanja" class="container-fluid org pt-6 pb-6">
+        <div class="container">
+            <div class="text-center section-head mx-auto wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="section-title display-6 text-uppercase mb-3">Cara Berbelanja</h1>
+                <p class="mb-5">Empat langkah mudah untuk mendapatkan bahan bangunan yang Anda butuhkan di Toko Terobosan Baru Condong Catur.</p>
+            </div>
+            <div class="row g-4 steps">
+                <div class="col-md-6 col-lg-3 step-item reveal">
+                    <div class="step-num"><i class="fab fa-whatsapp"></i></div>
+                    <h5 class="text-uppercase">Cek Stok</h5>
+                    <p>Tanyakan ketersediaan dan harga barang lewat WhatsApp atau Instagram.</p>
+                </div>
+                <div class="col-md-6 col-lg-3 step-item reveal">
+                    <div class="step-num"><i class="fa fa-store"></i></div>
+                    <h5 class="text-uppercase">Datang ke Toko</h5>
+                    <p>Kunjungi kami di Ring Road Utara, buka setiap hari pukul 07.00 – 21.00 WIB.</p>
+                </div>
+                <div class="col-md-6 col-lg-3 step-item reveal">
+                    <div class="step-num"><i class="fa fa-qrcode"></i></div>
+                    <h5 class="text-uppercase">Pilih &amp; Bayar</h5>
+                    <p>Pembayaran tunai atau QRIS, untuk pembelian grosir maupun eceran.</p>
+                </div>
+                <div class="col-md-6 col-lg-3 step-item reveal">
+                    <div class="step-num"><i class="fa fa-boxes"></i></div>
+                    <h5 class="text-uppercase">Ambil Barang</h5>
+                    <p>Barang diambil langsung di toko karena kami tidak menyediakan pengantaran.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cara Belanja End -->
+
+
+    <!-- Saran Start -->
+    <div id="saran" class="container-fluid pt-6 pb-6">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="section-title display-6 text-uppercase mb-4">Saran &amp; Masukan</h1>
+                    <p class="mb-4">Punya saran, kritik, atau masukan untuk Toko Terobosan Baru Condong Catur?
+                        Tulis di sini, pesan Anda akan dikirim melalui email kepada pengelola toko.</p>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 btn-xl-square bg-light me-3">
+                            <i class="far fa-envelope-open fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="lh-base text-uppercase mb-0">Terima kasih atas masukan Anda</h5>
+                    </div>
+                </div>
+                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
+                    <form id="feedback-form" class="bg-white p-4 p-md-5 feedback-card" action="https://formspree.io/f/meaglykj" method="POST">
+                        <input type="hidden" name="_subject" value="Saran & Masukan dari Website Toko Terobosan Baru">
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control border-0 bg-light" id="fb-nama" name="Nama" placeholder="Nama (opsional)">
+                                    <label for="fb-nama">Nama (opsional)</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control border-0 bg-light" id="fb-email" name="email" placeholder="Email (opsional)">
+                                    <label for="fb-email">Email (opsional)</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <select class="form-select border-0 bg-light" id="fb-jenis" name="Jenis">
+                                        <option value="Saran" selected>Saran</option>
+                                        <option value="Kritik">Kritik</option>
+                                        <option value="Masukan">Masukan</option>
+                                    </select>
+                                    <label for="fb-jenis">Jenis pesan</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control border-0 bg-light" placeholder="Tulis pesan Anda" id="fb-pesan" name="Pesan" style="height: 150px" required></textarea>
+                                    <label for="fb-pesan">Pesan Anda</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit"><i class="far fa-paper-plane me-2"></i>Kirim Pesan</button>
+                                <p id="fb-note" class="small text-danger mt-3 mb-0" style="display:none"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Saran End -->
+
+
+    <!-- Kontak Start -->
+    <div id="kontak" class="container-fluid contact bg-dark mt-6 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container pt-5">
+            <div class="row gy-5 gx-0">
+                <div class="col-lg-6 pe-lg-5 wow fadeIn" data-wow-delay="0.3s">
+                    <h1 class="section-title display-6 text-uppercase text-white mb-4">Kunjungi &amp; Hubungi Kami</h1>
+                    <p class="text-white mb-5 wow fadeIn" data-wow-delay="0.4s">Datang langsung ke toko untuk membeli
+                        dan mengambil barang, atau hubungi kami lebih dulu melalui WhatsApp dan Instagram.</p>
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.5s">
+                        <div class="btn-lg-square bg-white flex-shrink-0">
+                            <i class="bi bi-geo-alt text-dark fs-3"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h6 class="text-white text-uppercase">Alamat</h6>
+                            <span class="text-white">Jl. Ring Road Utara No. 15, RW 2, Sanggrahan, Condongcatur, Kec. Depok, Kab. Sleman, DI Yogyakarta 55281</span>
+                        </div>
+                    </div>
+                    <hr class="bg-body">
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.6s">
+                        <div class="btn-lg-square bg-white flex-shrink-0">
+                            <i class="bi bi-clock text-dark fs-3"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h6 class="text-white text-uppercase">Jam Operasional</h6>
+                            <span class="text-white d-block">Setiap hari, pukul 07.00 – 21.00 WIB</span>
+                            <span class="status-badge mt-2" data-open-status><span class="status-dot"></span><span class="status-text">Memeriksa jam buka…</span></span>
+                        </div>
+                    </div>
+                    <hr class="bg-body">
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.7s">
+                        <div class="btn-lg-square bg-white flex-shrink-0">
+                            <i class="bi bi-wallet2 text-dark fs-3"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h6 class="text-white text-uppercase">Pembayaran</h6>
+                            <span class="text-white">Tunai atau QRIS</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 mt-5 wow fadeIn" data-wow-delay="0.8s">
+                        <a href="https://wa.me/6282338881919" target="_blank" rel="noopener" class="btn btn-primary py-3 px-4"><i
+                                class="fab fa-whatsapp me-2"></i>WhatsApp 0823-3888-1919</a>
+                        <a href="https://instagram.com/terobosanbarucondongcatur" target="_blank" rel="noopener"
+                            class="btn btn-light py-3 px-4"><i class="fab fa-instagram me-2"></i>@terobosanbarucondongcatur</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-n5 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="bg-white p-4 p-md-5 map-card">
+                        <h2 class="text-uppercase mb-3">Lokasi Toko</h2>
+
+                        <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Pilih lokasi cabang">
+                            <button type="button" class="btn branch-btn active"
+                                data-q="Toko Terobosan Baru Condong Catur, Jl. Ring Road Utara No. 15, Condongcatur, Sleman"
+                                data-addr="Cabang Condongcatur: Jl. Ring Road Utara No. 15, RW 2, Sanggrahan, Condongcatur, Kec. Depok, Kab. Sleman, DI Yogyakarta 55281">
+                                <i class="fa fa-map-marker-alt me-2"></i>Condongcatur
+                            </button>
+                            <button type="button" class="btn branch-btn"
+                                data-q="Toko Terobosan Baru Palagan, Sleman"
+                                data-addr="Pusat: Toko Terobosan Baru, Palagan, Kab. Sleman (ganti dengan alamat lengkap)">
+                                <i class="fa fa-store me-2"></i>Palagan (Pusat)
+                            </button>
+                        </div>
+
+                        <div class="map-frame">
+                            <iframe id="map-iframe" title="Peta lokasi Toko Terobosan Baru" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+                                src="https://www.google.com/maps?q=Toko%20Terobosan%20Baru%20Condong%20Catur%2C%20Jl.%20Ring%20Road%20Utara%20No.%2015%2C%20Condongcatur%2C%20Sleman&z=17&output=embed"></iframe>
+                        </div>
+
+                        <p id="map-address" class="small mt-3 mb-3">Cabang Condongcatur: Jl. Ring Road Utara No. 15, RW 2, Sanggrahan, Condongcatur, Kec. Depok, Kab. Sleman, DI Yogyakarta 55281</p>
+                        <a id="map-open" class="btn btn-primary py-2 px-4" target="_blank" rel="noopener"
+                            href="https://www.google.com/maps/search/?api=1&query=Toko%20Terobosan%20Baru%20Condong%20Catur%2C%20Jl.%20Ring%20Road%20Utara%20No.%2015%2C%20Condongcatur%2C%20Sleman">
+                            <i class="bi bi-box-arrow-up-right me-2"></i>Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Kontak End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer pt-6 pb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container pt-5 pb-3">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <img class="footer-logo mb-3" src="img/logo-terobosan-baru.jpg" alt="Logo Toko Terobosan Baru Condong Catur">
+                    <h5 class="text-uppercase text-light mb-1">Terobosan Baru Condong Catur</h5>
+                    <p class="fst-italic mb-3">Penerobos Batas dari Keterbatasan</p>
+                    <div class="d-flex">
+                        <a class="btn btn-square btn-light me-2" href="https://wa.me/6282338881919" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-square btn-light me-2" href="https://instagram.com/terobosanbarucondongcatur" target="_blank" rel="noopener" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Kontak Kami</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Jl. Ring Road Utara No. 15, RW 2, Sanggrahan, Condongcatur, Kec. Depok, Kab. Sleman, DI Yogyakarta 55281</p>
+                    <p class="mb-2"><i class="fab fa-whatsapp text-primary me-3"></i><a class="text-body" href="https://wa.me/6282338881919" target="_blank" rel="noopener">0823-3888-1919</a></p>
+                    <p class="mb-2"><i class="fab fa-instagram text-primary me-3"></i><a class="text-body" href="https://instagram.com/terobosanbarucondongcatur" target="_blank" rel="noopener">@terobosanbarucondongcatur</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Tautan Cepat</h5>
+                    <a class="btn btn-link" href="#tentang">Tentang Kami</a>
+                    <a class="btn btn-link" href="#struktur">Struktur Organisasi</a>
+                    <a class="btn btn-link" href="produk.html">Produk &amp; Harga</a>
+                    <a class="btn btn-link" href="#galeri">Galeri Toko</a>
+                    <a class="btn btn-link" href="#keunggulan">Keunggulan</a>
+                    <a class="btn btn-link" href="#saran">Saran &amp; Masukan</a>
+                    <a class="btn btn-link" href="#kontak">Kontak &amp; Lokasi</a>
+                    <h5 class="text-uppercase text-light mt-4 mb-3">Jam Operasional</h5>
+                    <p class="text-uppercase mb-0">Setiap hari</p>
+                    <p>07.00 – 21.00 WIB</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase text-light mb-4">Galeri</h5>
+                    <div class="row g-1">
+                        <div class="col-4"><img class="img-fluid footer-thumb" src="img/toko-interior.jpg" alt="Interior toko"></div>
+                        <div class="col-4"><img class="img-fluid footer-thumb" src="img/toko-malam.jpg" alt="Tampak depan malam"></div>
+                        <div class="col-4"><img class="img-fluid footer-thumb" src="img/toko-siang.jpg" alt="Tampak depan siang"></div>
+                        <div class="col-4"><img class="img-fluid footer-thumb" src="img/produk-semen-gresik.jpg" alt="Semen Gresik"></div>
+                        <div class="col-4"><img class="img-fluid footer-thumb" src="img/produk-besi-10mm.jpg" alt="Besi beton polos"></div>
+                        <div class="col-4"><img class="img-fluid footer-thumb" src="img/produk-pipa-pvc.jpg" alt="Pipa PVC"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid text-body copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="fw-semi-bold" href="#beranda">Toko Terobosan Baru Condong Catur</a>. Hak cipta dilindungi.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
+                    Didesain oleh <span class="fw-semi-bold text-white">Febiansyah, Zahra, dan Ayik</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" aria-label="Kembali ke atas"><i
+            class="bi bi-arrow-up"></i></a>
+
+
+    <!-- WhatsApp Float (label & titik status ditambahkan otomatis oleh script di bawah) -->
+    <a href="https://wa.me/6282338881919?text=Halo%20Toko%20Terobosan%20Baru%20Condong%20Catur%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener" class="wa-float" aria-label="Chat WhatsApp Toko Terobosan Baru"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau gambar" hidden>
+        <button type="button" class="lb-btn lb-close" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+        <button type="button" class="lb-btn lb-nav lb-prev" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button>
+        <figure class="lb-figure"><img src="" alt=""><figcaption></figcaption></figure>
+        <button type="button" class="lb-btn lb-nav lb-next" aria-label="Berikutnya"><i class="bi bi-chevron-right"></i></button>
+    </div>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+
+    <!-- Template Javascript (cukup dimuat sekali) -->
+    <script src="js/main.js"></script>
+
+    <!-- Animasi tambahan index: hero, latar bergerak, parallax, typing, tombol WA -->
+    <script>
+/* site-fx.js – animasi seragam untuk index & produk. Muat SETELAH main.js */
+(function () {
+    "use strict";
+    var $ = function (id) { return document.getElementById(id); };
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function jalan(fn) { try { fn(); } catch (e) { console.error(e); } }
+
+    // [ikon, posisi, kekuatan parallax, ukuran, durasi, jeda]
+    function icons(list) {
+        return list.map(function (a) {
+            return '<span class="phero-ico" style="--d:' + a[2] + ';' + a[1] + '"><i class="fa ' + a[0] +
+                '" style="--s:' + a[3] + ';--t:' + a[4] + ';--dl:' + a[5] + '"></i></span>';
+        }).join('');
+    }
+    function bg(list) {
+        return '<div class="phero-bg" aria-hidden="true"><div class="phero-grid"></div>' +
+            '<span class="phero-blob phero-blob-1"></span><span class="phero-blob phero-blob-2"></span>' + icons(list) + '</div>';
+    }
+
+    /* 1. Hero: ikon melayang + garis proyek, sama seperti halaman produk */
+    jalan(function () {
+        var car = $('header-carousel');
+        if (!car) return;
+        var d = document.createElement('div');
+        d.className = 'hero-fx';
+        d.setAttribute('aria-hidden', 'true');
+        d.innerHTML = '<div class="phero-stripe"></div>';
+        car.appendChild(d);
+    });
+
+    /* 2. Pita statistik & kontak: kisi blueprint + cahaya */
+    jalan(function () {
+        var sb = document.querySelector('.stats-band');
+        if (sb) {
+            sb.classList.add('fx-host'); sb.setAttribute('data-parallax', '');
+            sb.insertAdjacentHTML('afterbegin', bg([
+                ['fa-boxes', 'left:4%;top:20%', 20, '3.4rem', '7s', '0s'],
+                ['fa-tools', 'right:5%;top:25%', 26, '3.6rem', '8s', '-2s']
+            ]) + '<div class="phero-stripe" aria-hidden="true"></div>');
+        }
+        var ct = document.querySelector('.contact');
+        if (ct) {
+            ct.classList.add('fx-host');
+            ct.insertAdjacentHTML('afterbegin', bg([]) + '<div class="phero-stripe" aria-hidden="true"></div>');
+        }
+    });
+
+    /* 3. Parallax mouse untuk semua area ber-atribut data-parallax (dan .phero) */
+    jalan(function () {
+        if (reduce || !window.matchMedia('(hover: hover)').matches) return;
+        document.querySelectorAll('[data-parallax], .phero').forEach(function (box) {
+            var raf = 0, x = 0, y = 0;
+            box.addEventListener('mousemove', function (e) {
+                var r = box.getBoundingClientRect();
+                x = (e.clientX - r.left) / r.width - 0.5;
+                y = (e.clientY - r.top) / r.height - 0.5;
+                if (!raf) raf = requestAnimationFrame(function () {
+                    box.style.setProperty('--mx', x.toFixed(3));
+                    box.style.setProperty('--my', y.toFixed(3));
+                    raf = 0;
+                });
+            });
+            box.addEventListener('mouseleave', function () {
+                box.style.setProperty('--mx', 0); box.style.setProperty('--my', 0);
+            });
+        });
+    });
+
+    /* 4. Kata berganti diketik: <span data-typing="semen,besi,cat"> */
+    jalan(function () {
+        document.querySelectorAll('[data-typing]').forEach(function (el) {
+            var kata = el.getAttribute('data-typing').split(',');
+            if (reduce) { el.textContent = kata[0]; return; }
+            var tampak = true;
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(function (en) { tampak = en[0].isIntersecting; }).observe(el);
+            }
+            var i = 0, n = 0, hapus = false;
+            function tik() {
+                if (document.hidden || !tampak) { setTimeout(tik, 600); return; }
+                var w = kata[i];
+                if (!hapus) {
+                    n++; el.textContent = w.slice(0, n);
+                    if (n === w.length) { hapus = true; setTimeout(tik, 1700); return; }
+                    setTimeout(tik, 95);
+                } else {
+                    n--; el.textContent = w.slice(0, n);
+                    if (n === 0) { hapus = false; i = (i + 1) % kata.length; setTimeout(tik, 380); return; }
+                    setTimeout(tik, 45);
+                }
+            }
+            el.textContent = '';
+            setTimeout(tik, 600);
+        });
+    });
+
+    /* 5. Tombol WhatsApp: label muncul berkala, titik status buka/tutup */
+    jalan(function () {
+        var wa = document.querySelector('.wa-float');
+        if (!wa) return;
+        if (!wa.querySelector('.wa-label')) {
+            wa.insertAdjacentHTML('beforeend', '<span class="wa-label">Chat WhatsApp</span><span class="wa-dot"></span>');
+        }
+        if (!reduce) {
+            var hint = function () {
+                if (document.hidden) return;
+                wa.classList.add('is-hint');
+                setTimeout(function () { wa.classList.remove('is-hint'); }, 3800);
+            };
+            setTimeout(hint, 3000);
+            setInterval(hint, 28000);
+        }
+        var badge = document.querySelector('[data-open-status]');
+        if (badge) {
+            var sync = function () {
+                wa.classList.toggle('is-open', badge.classList.contains('is-open'));
+                wa.classList.toggle('is-closed', badge.classList.contains('is-closed'));
+            };
+            sync();
+            if (window.MutationObserver) new MutationObserver(sync).observe(badge, { attributes: true, attributeFilter: ['class'] });
+        }
+    });
+
+    /* 6. Foto kategori gagal dimuat: coba .jpe <-> .jpg, lalu ikon */
+    jalan(function () {
+        document.addEventListener('error', function (e) {
+            var img = e.target;
+            if (!img || img.tagName !== 'IMG' || !img.closest('.phero-section .kat-box')) return;
+            var s = img.getAttribute('src'), alt = '';
+            if (/\.jpe$/i.test(s)) alt = s.replace(/\.jpe$/i, '.jpg');
+            else if (/\.jpg$/i.test(s)) alt = s.replace(/\.jpg$/i, '.jpe');
+            if (alt && !img.getAttribute('data-coba')) { img.setAttribute('data-coba', '1'); img.src = alt; return; }
+            img.parentNode.innerHTML = '<i class="fa ' + (img.parentNode.getAttribute('data-ikon') || 'fa-box') + '"></i>';
+        }, true);
+    });
+    /* 7. Form saran -> Formspree, tanpa pindah halaman */
+    jalan(function () {
+        var form = $('feedback-form'), note = $('fb-note');
+        if (!form || !note || !window.fetch) return;
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var btn = form.querySelector('button[type=submit]'), label = btn.innerHTML;
+            function pesan(ok, t) {
+                note.className = 'small mt-3 mb-0 ' + (ok ? 'text-success' : 'text-danger');
+                note.textContent = t; note.style.display = 'block';
+            }
+            btn.disabled = true; btn.innerHTML = 'Mengirim…';
+            fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+                .then(function (r) { if (!r.ok) throw new Error(r.status); form.reset(); pesan(true, 'Terima kasih! Pesan Anda sudah terkirim.'); })
+                .catch(function () { pesan(false, 'Pesan belum terkirim. Coba lagi atau hubungi kami lewat WhatsApp.'); })
+                .then(function () { btn.disabled = false; btn.innerHTML = label; });
+        });
+    });
+})();
+
+    </script>
+</body>
+
+</html>
